@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Blocked — Devoted</title>
+<link rel="stylesheet" href="fonts.css" />
+<link rel="stylesheet" href="blocked.css" />
+</head>
+<body>
+  <div class="glow-field" id="glow-field"></div>
+  <main class="wrap">
+    <div class="beacon-mark">
+      <span class="beam beam-l"></span>
+      <span class="beam beam-r"></span>
+      <span class="ring"></span>
+    </div>
+
+    <p class="eyebrow">devoted</p>
+    <h1 id="site-name">this site is blocked</h1>
+    <p class="sub">You chose to keep <span id="site-domain">this</span> out of view right now. That choice still stands.</p>
+
+    <div class="divider"></div>
+
+    <details class="override">
+      <summary>I need through, just this once</summary>
+      <div class="override-body">
+        <p>Type the phrase below to unlock this site for 5 minutes. It's not a punishment — just enough friction to make sure you mean it.</p>
+        <p class="phrase" id="challenge-phrase"></p>
+        <form id="unlock-form">
+          <input type="text" id="unlock-input" autocomplete="off" spellcheck="false" placeholder="type the phrase exactly" />
+          <button type="submit">Unlock for 5 minutes</button>
+        </form>
+        <p class="mismatch" id="mismatch"></p>
+      </div>
+    </details>
+  </main>
+  <script src="blocked.js"></script>
+</body>
+</html>

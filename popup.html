@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Devoted</title>
+<link rel="stylesheet" href="fonts.css" />
+<link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="app">
+
+    <header class="header">
+      <div class="brand">
+        <span class="beacon" id="beacon-dot"></span>
+        <h1>Devoted<span class="brand-dot">.</span></h1>
+      </div>
+      <div class="header-right">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode" title="Toggle dark/light mode">
+          <svg id="theme-icon-moon" viewBox="0 0 20 20" width="14" height="14" aria-hidden="true">
+            <path d="M17 10.8A7.2 7.2 0 0 1 8.6 2.3a7.5 7.5 0 1 0 8.4 8.5Z" fill="currentColor"/>
+          </svg>
+          <svg id="theme-icon-sun" viewBox="0 0 20 20" width="14" height="14" aria-hidden="true" style="display:none">
+            <circle cx="10" cy="10" r="4" fill="currentColor"/>
+            <g stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+              <path d="M10 1.5v2.4M10 16.1v2.4M18.5 10h-2.4M3.9 10H1.5M15.9 4.1l-1.7 1.7M5.8 14.2l-1.7 1.7M15.9 15.9l-1.7-1.7M5.8 5.8 4.1 4.1"/>
+            </g>
+          </svg>
+        </button>
+        <span class="status-pill" id="status-pill">off</span>
+      </div>
+    </header>
+
+    <p class="status-line" id="status-line">Blocking is off.</p>
+
+    <section class="session-card" id="session-card">
+      <div class="session-copy">
+        <strong id="session-title">Start a focus session</strong>
+        <span class="session-sub" id="session-sub">Blocking stays on for the full time — you won't be able to turn it off early.</span>
+      </div>
+      <div class="session-actions" id="session-actions">
+        <button class="chip" data-mins="25">25m</button>
+        <button class="chip" data-mins="50">50m</button>
+        <button class="chip" data-mins="90">90m</button>
+      </div>
+    </section>
+
+    <div class="row master-row">
+      <div class="row-copy">
+        <span class="row-title">Blocking</span>
+        <span class="row-sub">Turn all blocking on or off</span>
+      </div>
+      <label class="switch">
+        <input type="checkbox" id="master-toggle" />
+        <span class="switch-track"><span class="switch-thumb"></span></span>
+      </label>
+    </div>
+
+    <section class="sites">
+      <div class="sites-head">
+        <h2>Blocked sites</h2>
+        <button class="text-btn" id="restore-defaults">Restore defaults</button>
+      </div>
+      <ul id="site-list" class="site-list"></ul>
+
+      <form id="add-form" class="add-form">
+        <input
+          id="add-input"
+          type="text"
+          placeholder="add a site, e.g. reddit.com"
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <button type="submit" class="add-btn" aria-label="Add site">
+          <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
+            <path d="M8 2v12M2 8h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </form>
+      <p class="error" id="add-error"></p>
+    </section>
+
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
