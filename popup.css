@@ -238,9 +238,24 @@ body {
 .site-list {
   list-style: none;
   margin: 0 0 12px;
-  padding: 0;
+  padding: 0 4px 0 0;
   max-height: 230px;
   overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+.site-list::-webkit-scrollbar {
+  width: 6px;
+}
+.site-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+.site-list::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 999px;
+}
+.site-list::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
 }
 
 .site-row {

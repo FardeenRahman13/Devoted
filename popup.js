@@ -28,6 +28,11 @@ const els = {
 
 let countdownTimer = null;
 
+function labelFromDomain(domain) {
+  const first = domain.split(".")[0];
+  return first.charAt(0).toUpperCase() + first.slice(1);
+}
+
 function normalizeDomain(raw) {
   let v = raw.trim().toLowerCase();
   if (!v) return null;
@@ -199,7 +204,7 @@ els.addForm.addEventListener("submit", async (e) => {
     return;
   }
   const nextId = store.settings.nextRuleId ?? 100;
-  const newSite = { id: nextId, label: domain, domain, enabled: true, builtin: false };
+  const newSite = { id: nextId, label: labelFromDomain(domain), domain, enabled: true, builtin: false };
   await setStore({
     sites: [...store.sites, newSite],
     settings: { ...store.settings, nextRuleId: nextId + 1 }
